@@ -1,0 +1,391 @@
+{
+    "pizza": [
+        {
+            "name": "Pizza Margherita",
+            "description": "Tomatensaus, mozzarella & 3 kazen",
+            "price": 750
+        },
+        {
+            "name": "Pizza Bolognaise",
+            "description": "Bolognaisesaus, mozzarella & 3 kazen",
+            "price": 850
+        },
+        {
+            "name": "Pizza Hawaï",
+            "description": "Tomatensaus, mozzarella, ham, ananas & 3 kazen",
+            "price": 900
+        },
+        {
+            "name": "Pizza Quatrro Formaggi",
+            "description": "Tomatensaus,3 kazen, mozzarella & gorgonzola",
+            "price": 900
+        },
+        {
+            "name": "Pizza Salami",
+            "description": "Tomatensaus, mozzarella, salami, ui, paprika & 3 kazen",
+            "price": 900
+        },
+        {
+            "name": "Pizza Quattro Stagione",
+            "description": "Tomatensaus, mozzarella, ham, paprika, champignons, olĳven, artisjok, ui & 3 kazen",
+            "price": 900
+        },
+        {
+            "name": "Pizza Truckstop",
+            "description": "Tomatensaus, mozzarella, ui, paprika, champignons, kipreepjes & 3 kazen",
+            "price": 1050
+        },
+        {
+            "name": "Pizza Scampi",
+            "description": "Tomatensaus, mozzarella, scampi & 3 kazen",
+            "price": 1300
+        },
+        {
+            "name": "Pizza Parma",
+            "description": "Tomatensaus, verse tomaten, rucola, parmaham & parmezaanse kaas",
+            "price": 1200
+        },
+        {
+            "name": "Pizza van de maand",
+            "description": "??",
+            "price": 0
+        }
+    ],
+    "salade": [
+        {
+            "name": "Gemengde schotel",
+            "price": 490
+        },
+        {
+            "name": "Salade américain",
+            "price": 800
+        },
+        {
+            "name": "Salade tonĳn",
+            "price": 800
+        },
+        {
+            "name": "Salade spek",
+            "price": 850
+        },
+        {
+            "name": "Salade hawaï",
+            "price": 900
+        },
+        {
+            "name": "Salade gerookte zalm",
+            "price": 950
+        },
+        {
+            "name": "Caesarsalade",
+            "price": 850
+        },
+        {
+            "name": "Salade mozzarella",
+            "price": 950
+        }
+    ],
+    "wraps": [
+        {
+            "name": "Wrap gerookte zalm",
+            "price": 550
+        },
+        {
+            "name": "Wrap gepluisde kip",
+            "price": 550
+        },
+        {
+            "name": "Wrap kip",
+            "price": 550
+        },
+        {
+            "name": "Wrap Italian",
+            "price": 550
+        }
+    ],
+    "traditional": [
+        {
+            "name": "Broodje kaas",
+            "price": 330
+        },
+        {
+            "name": "Broodje ham",
+            "price": 330
+        },
+        {
+            "name": "Broodje salami",
+            "price": 330
+        },
+        {
+            "name": "Broodje kaas & ham",
+            "price": 370
+        },
+        {
+            "name": "Broodje eiersla",
+            "price": 370
+        },
+        {
+            "name": "Broodje kip hawai",
+            "price": 370
+        },
+        {
+            "name": "Broodje kip curry",
+            "price": 370
+        },
+        {
+            "name": "Broodje samourai",
+            "price": 370
+        },
+        {
+            "name": "Broodje boulet",
+            "price": 370
+        },
+        {
+            "name": "Broodje préparé",
+            "price": 370
+        },
+        {
+            "name": "Broodje martino",
+            "price": 390
+        },
+        {
+            "name": "Broodje tonijnsla",
+            "price": 390
+        },
+        {
+            "name": "Broodje krabsla",
+            "price": 450
+        },
+        {
+            "name": "Broodje omelet met spek",
+            "price": 450
+        },
+        {
+            "name": "Broodje brie",
+            "price": 450
+        },
+        {
+            "name": "Broodje gerookte zalm",
+            "price": 500
+        }
+    ],
+    "traditional_smos": [
+        {
+            "name": "Smos kaas",
+            "price": 400
+        },
+        {
+            "name": "Smos ham",
+            "price": 400
+        },
+        {
+            "name": "Smos salami",
+            "price": 400
+        },
+        {
+            "name": "Smos kaas & ham",
+            "price": 440
+        },
+        {
+            "name": "Smos eiersla",
+            "price": 430
+        },
+        {
+            "name": "Smos kip hawai",
+            "price": 430
+        },
+        {
+            "name": "Smos kip curry",
+            "price": 430
+        },
+        {
+            "name": "Smos samourai",
+            "price": 430
+        },
+        {
+            "name": "Smos boulet",
+            "price": 430
+        },
+        {
+            "name": "Smos préparé",
+            "price": 430
+        },
+        {
+            "name": "Smos martino",
+            "price": 450
+        },
+        {
+            "name": "Smos tonijnsla",
+            "price": 450
+        },
+        {
+            "name": "Broodje krabsla",
+            "price": 500
+        },
+        {
+            "name": "Smos omelet met spek",
+            "price": 500
+        },
+        {
+            "name": "Smos gerookte zalm",
+            "price": 570
+        },
+        {
+            "name": "Smos vegetarisch",
+            "price": 400
+        }
+    ],
+    "warm_sandwiches": [
+        {
+            "name": "Bicky burger",
+            "price": 380
+        },
+        {
+            "name": "Bicky cheese",
+            "price": 390
+        },
+        {
+            "name": "Bicky royal",
+            "price": 480
+        },
+        {
+            "name": "Bicky beef",
+            "price": 480
+        },
+        {
+            "name": "Smos warme boulet",
+            "price": 480,
+            "description": "Boulet, standaard salade, curry ketchup & mayonaise"
+        },
+        {
+            "name": "Smos warme omelet met spek",
+            "price": 510
+        },
+        {
+            "name": "Smos mexicano",
+            "price": 500
+        },
+        {
+            "name": "Smos kip krokant",
+            "price": 500
+        },
+        {
+            "name": "Warm broodje Truckstop",
+            "price": 550,
+            "description": "Pikante kipreepjes, sla, ui, frieten & barbecuesaus"
+        },
+        {
+            "name": "Smos bommeke",
+            "price": 550,
+            "description": "Platte hamburger, frieten, sla, tomaat & mayonaise"
+        },
+        {
+            "name": "Broodje warme fishburger",
+            "price": 550,
+            "description": "Fishburger, sla, tomaat, frieten & tartaarsaus"
+        },
+        {
+            "name": "Bourgondiër",
+            "price": 580,
+            "description": "Brie, gebakken spek, honing & nootjes"
+        },
+        {
+            "name": "Broodje vleeskroket",
+            "price": 500,
+            "description": "Vleeskroket, sla, tomaat & mayonaise"
+        }
+    ],
+    "special_sandwiches": [
+        {
+            "name": "Boulet special",
+            "price": 500,
+            "description": "Boulet, aardappelsla, mayonaise, ketchup & standaard salade"
+        },
+        {
+            "name": "Smos special",
+            "price": 500,
+            "description": "Kaas, ham, aardappelsla, mayonaise & standaard salade"
+        },
+        {
+            "name": "Smos brie",
+            "price": 500,
+            "description": "Brie, honing, nootjes & standaard salade"
+        },
+        {
+            "name": "Truckstop special",
+            "price": 500,
+            "description": "Gepluisde kip, barbecuesaus, ananas & standaard salade"
+        },
+        {
+            "name": "Mozzarella",
+            "price": 500,
+            "description": "Mozzarella, rucola, zongedroogde tomaten & basilicum"
+        },
+        {
+            "name": "Zalm special",
+            "price": 580,
+            "description": "Effikruidenkaas, gerookte zalm, ui, dressing & standaard salade"
+        },
+        {
+            "name": "Basilicum",
+            "price": 550,
+            "description": "Italiaanse ham, mozzarella, rucola, zongedroogde tomaat & basilicum"
+        },
+        {
+            "name": "Italiaans festijn",
+            "price": 580,
+            "description": "Olĳfolie, Italiaanse ham rucola, pĳnboompitten, parmezaanschilfers, tomaat & peper en zout"
+        },
+        {
+            "name": "Surf & Turf",
+            "price": 580,
+            "description": "Tonĳnsla, rosbief, kappertjes, rucola, tomaat"
+        },
+        {
+            "name": "Tagliata",
+            "price": 580,
+            "description": "Rosbief, balsamico azĳn, olĳfolie, parmezaanschilfers, rucola, zongedroogde tomaten"
+        }
+    ],
+    "soups": [
+        {
+            "name": "1 tas",
+            "price": 220
+        },
+        {
+            "name": "1 liter",
+            "price": 350
+        }
+    ],
+    "panini": [
+        {
+            "name": "Panini kaas & ham",
+            "price": 390
+        },
+        {
+            "name": "Panini traditioneel",
+            "price": 500,
+            "description": "Mozzarella, basilicum & tomaat"
+        },
+        {
+            "name": "Panini parma",
+            "price": 550,
+            "description": "Mozzarella, basilicum, Italiaanse ham & tomaat"
+        },
+        {
+            "name": "Panini brie",
+            "price": 540,
+            "description": "Brie, honing & nootjes"
+        },
+        {
+            "name": "Panini kip",
+            "price": 550,
+            "description": "Kip, mozzarella, ananas & rucola"
+        },
+        {
+            "name": "Panini boulet",
+            "price": 550,
+            "description": "Boulet, mozzarella, tomaat & black pepersaus"
+        }
+    ]
+}
