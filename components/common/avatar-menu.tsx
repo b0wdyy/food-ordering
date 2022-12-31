@@ -1,10 +1,17 @@
+import { ChevronDownIcon } from '@chakra-ui/icons'
 import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import React from 'react'
 
 const AvatarMenu = () => {
     return (
         <Menu>
-            <MenuButton as={Button}>John Doe</MenuButton>
+            <MenuButton
+                as={Button}
+                rightIcon={<ChevronDownIcon />}
+                colorScheme="yellow"
+            >
+                John Doe
+            </MenuButton>
 
             <MenuList>
                 <MenuItem>Avatar veranderen</MenuItem>

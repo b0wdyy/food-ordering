@@ -1,7 +1,8 @@
 import type { AppProps } from 'next/app'
-import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react'
-import TheHeader from '../components/common/the-header'
+import '@fontsource/poppins'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Head from 'next/head'
+import TheHeader from '@/components/common/the-header'
 
 const theme = extendTheme({
     colors: {
@@ -17,6 +18,10 @@ const theme = extendTheme({
             '800': '#664800',
             '900': '#332400',
         },
+    },
+    fonts: {
+        heading: `'Poppins', sans-serif`,
+        body: `'Poppins', sans-serif`,
     },
 })
 

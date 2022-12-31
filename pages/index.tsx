@@ -1,4 +1,7 @@
-import { Box, Button, Text } from '@chakra-ui/react'
+import { ButtonPrimary } from '@/components/buttons/primary'
+import { OrderAmount } from '@/components/orders/order-amount'
+import { AddIcon } from '@chakra-ui/icons'
+import { Box, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 
 export default function Home() {
@@ -15,15 +18,25 @@ export default function Home() {
     }
 
     return (
-        <Box as="section" m={8}>
+        <Box as="section" m={8} position="relative">
             <Text as="h1" fontWeight="bold" fontSize="2xl">
                 {greeting()}
             </Text>
 
+            <Text color="gray.500">
+                Orders vandaag <OrderAmount />
+            </Text>
+
             <Link passHref href="/orders">
-                <Button bg="yellow.50" color="yellow.600">
-                    Stel een lijst op
-                </Button>
+                <ButtonPrimary
+                    shadow="lg"
+                    position={['fixed', 'static']}
+                    bottom={8}
+                    right={8}
+                    borderRadius="full"
+                    text="Stel een lijst op"
+                    leftIcon={<AddIcon />}
+                />
             </Link>
         </Box>
     )

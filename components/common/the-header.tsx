@@ -1,4 +1,5 @@
 import { Box, Text } from '@chakra-ui/react'
+import Link from 'next/link'
 import React from 'react'
 import AvatarMenu from './avatar-menu'
 
@@ -12,7 +13,9 @@ const TheHeader = () => {
             alignItems="center"
             justifyContent="space-between"
         >
-            <Text fontWeight="bold">Food ordering</Text>
+            <Link href="/" passHref>
+                <Text fontWeight="bold">Food ordering</Text>
+            </Link>
 
             <AvatarMenu />
         </Box>
