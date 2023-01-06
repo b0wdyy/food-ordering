@@ -3,6 +3,7 @@ import '@fontsource/poppins'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Head from 'next/head'
 import TheHeader from '@/components/common/the-header'
+import { UserProvider } from 'lib/context/user-context'
 
 const theme = extendTheme({
     colors: {
@@ -32,9 +33,11 @@ export default function App({ Component, pageProps }: AppProps) {
                 <title>Food Ordering</title>
             </Head>
 
-            <TheHeader />
+            <UserProvider>
+                <TheHeader />
 
-            <Component {...pageProps} />
+                <Component {...pageProps} />
+            </UserProvider>
         </ChakraProvider>
     )
 }
