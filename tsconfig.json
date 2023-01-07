@@ -19,6 +19,7 @@
             "@/config/*": ["config/*"],
             "@/components/*": ["components/*"],
             "@/assets/*": ["assets/*"],
+            "@/lib/*": ["lib/*"],
             "@/data/*": ["data/*"]
         }
     },

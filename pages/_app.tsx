@@ -31,6 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <ChakraProvider theme={theme}>
             <Head>
                 <title>Food Ordering</title>
+                <link rel="icon" href="/assets/svg/avatars/default.svg" />
             </Head>
 
             <UserProvider>

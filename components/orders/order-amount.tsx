@@ -1,9 +1,9 @@
-import { Box } from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
 import React from 'react'
 
 export const OrderAmount = () => {
     return (
-        <Box
+        <Text
             h={8}
             w={8}
             display="inline-grid"
@@ -14,6 +14,6 @@ export const OrderAmount = () => {
             color="white"
         >
             8
-        </Box>
+        </Text>
     )
 }

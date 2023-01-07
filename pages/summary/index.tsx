@@ -1,12 +1,12 @@
 import { Box, Text } from '@chakra-ui/react'
 import React from 'react'
 
-const NewOrder: React.FC = () => {
+const Summary: React.FC = () => {
     return (
         <Box>
-            <Text>Hoi</Text>
+            <Text>hoi</Text>
         </Box>
     )
 }
 
-export default NewOrder
+export default Summary

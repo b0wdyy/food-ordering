@@ -1,10 +1,10 @@
+import React from 'react'
 import { ButtonPrimary } from '@/components/buttons/primary'
 import { OrderAmount } from '@/components/orders/order-amount'
-import { AddIcon } from '@chakra-ui/icons'
 import { Box, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 
-export default function Home() {
+const Home: React.FC = () => {
     function greeting() {
         const hours = new Date().getHours()
 
@@ -23,11 +23,11 @@ export default function Home() {
                 {greeting()}
             </Text>
 
-            <Text color="gray.500">
+            <Box color="gray.500">
                 Orders vandaag <OrderAmount />
-            </Text>
+            </Box>
 
-            <Link passHref href="/orders">
+            <Link passHref href="/orders/new">
                 <ButtonPrimary
                     shadow="lg"
                     position={['fixed', 'static']}
@@ -35,9 +35,10 @@ export default function Home() {
                     right={8}
                     borderRadius="full"
                     text="Stel een lijst op"
-                    leftIcon={<AddIcon />}
                 />
             </Link>
         </Box>
     )
 }
+
+export default Home

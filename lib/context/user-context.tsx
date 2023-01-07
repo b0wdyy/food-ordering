@@ -1,4 +1,12 @@
-import React, { createContext, useContext, useMemo, useState } from 'react'
+import { database } from '@/config/firebaseConfig'
+import { doc, getDoc } from 'firebase/firestore'
+import React, {
+    createContext,
+    useContext,
+    useEffect,
+    useMemo,
+    useState,
+} from 'react'
 
 type UserState = { username: string; avatar: string }
 type UserProviderProps = { children: React.ReactNode }
@@ -12,12 +20,31 @@ const UserContext = createContext<
 >(undefined)
 
 function UserProvider({ children }: UserProviderProps) {
-    const [user, setUser] = useState<UserState>(() => ({
-        avatar: 'default',
+    const [user, setUser] = useState<UserState>({
         username: 'John Doe',
-    }))
+        avatar: 'default',
+    })
 
     const value = useMemo(() => ({ user, setUser }), [user])
+
+    useEffect(() => {
+        async function init() {
+            const username = localStorage.getItem('USERNAME') as string
+
+            if (!username) return
+
+            const docRef = doc(database, 'users', username)
+            const snapshot = await getDoc(docRef)
+
+            if (snapshot.exists()) {
+                const user = snapshot.data()
+                setUser(user as UserState)
+                return
+            }
+        }
+
+        init()
+    }, [])
 
     return <UserContext.Provider value={value}>{children}</UserContext.Provider>
 }
