@@ -1,7 +1,9 @@
+import { useOrders } from '@/lib/hooks/use-orders'
 import { Text } from '@chakra-ui/react'
 import React from 'react'
 
 export const OrderAmount = () => {
+    const { orders } = useOrders()
     return (
         <Text
             h={8}
@@ -13,7 +15,7 @@ export const OrderAmount = () => {
             fontWeight="bold"
             color="white"
         >
-            8
+            {orders?.size}
         </Text>
     )
 }

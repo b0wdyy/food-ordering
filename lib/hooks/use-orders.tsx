@@ -3,24 +3,36 @@ import {
     collection,
     DocumentData,
     getDocs,
-    QuerySnapshot,
+    query,
+    QueryDocumentSnapshot,
+    where,
+    WhereFilterOp,
 } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 
-export function useOrders() {
-    const [docSnap, setDocSnap] = useState<QuerySnapshot<DocumentData>>()
-    const docRef = collection(database, 'orders')
+export function useOrders(firebaseQuery?: string) {
+    const [orders, setOrders] =
+        useState<QueryDocumentSnapshot<DocumentData>[]>()
+    const [fieldPath, whereOp, value] = firebaseQuery
+        ? (firebaseQuery.split(', ') as [string, WhereFilterOp, string])
+        : (['', '==', ''] as [string, WhereFilterOp, string])
+    const docRef = firebaseQuery
+        ? query(
+              collection(database, 'orders'),
+              where(fieldPath, whereOp, value)
+          )
+        : collection(database, 'orders')
 
     useEffect(() => {
         async function initCollection() {
-            const docSnap = await getDocs(docRef)
-            setDocSnap(docSnap)
+            const ordersRef = await getDocs(docRef)
+            setOrders(ordersRef.docs)
         }
 
         initCollection()
     }, [])
 
     return {
-        docSnap,
+        orders,
     }
 }

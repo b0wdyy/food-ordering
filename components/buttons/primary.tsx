@@ -10,7 +10,13 @@ export const ButtonPrimary: React.FC<PrimaryButtonProps> = ({
     ...rest
 }) => {
     return (
-        <Button {...rest} color="yellow.600" bg="yellow.50" rounded="lg">
+        <Button
+            {...rest}
+            color="yellow.600"
+            bg="yellow.50"
+            variant="yellow"
+            rounded="lg"
+        >
             {text}
         </Button>
     )
