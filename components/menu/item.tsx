@@ -1,5 +1,5 @@
 import { IMenuItem } from '@/lib/types/IMenu'
-import { Box, IconButton, Text } from '@chakra-ui/react'
+import { Flex, IconButton, Text } from '@chakra-ui/react'
 import { AddIcon } from '@chakra-ui/icons'
 
 interface MenuItemProps {
@@ -8,16 +8,25 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
     return (
-        <Box>
-            <Text>{item.name}</Text>
+        <Flex
+            borderColor="gray.200"
+            align="center"
+            p={2}
+            borderRadius="md"
+            borderWidth={1}
+        >
+            <Text flex={1}>{item.name}</Text>
             <IconButton
+                size="sm"
                 icon={<AddIcon />}
                 rounded="full"
                 aria-label="add product"
-                bg="yellow.200"
-                colorScheme="yellow"
+                bg="yellow.100"
+                color="yellow.600"
+                _active={{ bg: 'yellow.300' }}
+                _hover={{ bg: 'yellow.200' }}
             />
-        </Box>
+        </Flex>
     )
 }
 
