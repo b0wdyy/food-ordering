@@ -44,7 +44,6 @@ export function orderReducer(
             const ordersIndex = state.orders.findIndex(
                 (order) => order.name === action.payload.name
             )
-            console.log(ordersIndex)
 
             if (ordersIndex !== -1) {
                 state.orders[ordersIndex].amount += 1
