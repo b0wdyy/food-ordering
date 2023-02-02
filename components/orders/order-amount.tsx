@@ -15,7 +15,7 @@ export const OrderAmount = () => {
             fontWeight="bold"
             color="white"
         >
-            {orders?.size}
+            {orders?.length}
         </Text>
     )
 }
