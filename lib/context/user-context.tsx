@@ -8,8 +8,13 @@ import React, {
     useState,
 } from 'react'
 
-type UserState = { username: string; avatar: string }
-type UserProviderProps = { children: React.ReactNode }
+interface UserState {
+    username: string
+    avatar: string
+}
+interface UserProviderProps {
+    children: React.ReactNode
+}
 
 const UserContext = createContext<
     | {
