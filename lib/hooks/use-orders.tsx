@@ -30,6 +30,7 @@ export function useOrders(firebaseQuery?: string) {
         }
 
         initCollection()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return {
