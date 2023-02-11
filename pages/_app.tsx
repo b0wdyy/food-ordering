@@ -4,6 +4,7 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Head from 'next/head'
 import TheHeader from '@/components/common/the-header'
 import { UserProvider } from 'lib/context/user-context'
+import ModalsWrapper from '@/components/modals/wrapper'
 
 const theme = extendTheme({
     colors: {
@@ -38,6 +39,8 @@ export default function App({ Component, pageProps }: AppProps) {
                 <TheHeader />
 
                 <Component {...pageProps} />
+
+                <ModalsWrapper />
             </UserProvider>
         </ChakraProvider>
     )
