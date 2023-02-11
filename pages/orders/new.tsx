@@ -12,6 +12,10 @@ const NewOrder: React.FC = () => {
     return (
         <MenuOrdersProvider>
             <Container py={4}>
+                <Text as="h1" fontWeight="bold" fontSize="2xl" mb={4}>
+                    Your order
+                </Text>
+
                 <Box>
                     <MenuOverview />
 
@@ -22,11 +26,10 @@ const NewOrder: React.FC = () => {
                     <ButtonPrimary width="100%" text="Place order" />
                 </Box>
 
-                <Text as="h1" fontWeight="bold" fontSize="2xl" my={4}>
-                    Your order
-                </Text>
-
-                <Box my={2}>
+                <Box mt={4}>
+                    <Text as="h2" fontWeight="bold" fontSize="xl" mb={4}>
+                        Truckstop
+                    </Text>
                     <Menu data={menu} />
                 </Box>
             </Container>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text } from '@chakra-ui/react'
+import { StackDivider, Text, VStack } from '@chakra-ui/react'
 import { useMenuOrders } from '@/lib/context/order-context'
 
 interface MenuOverviewProps {}
@@ -10,7 +10,10 @@ const MenuOverview: React.FC<MenuOverviewProps> = () => {
     } = useMenuOrders()
 
     return orders.length ? (
-        <Box
+        <VStack
+            divider={<StackDivider borderColor="gray.200" />}
+            spacing={4}
+            align="stretch"
             borderColor="gray.200"
             p={2}
             borderRadius="md"
@@ -22,7 +25,7 @@ const MenuOverview: React.FC<MenuOverviewProps> = () => {
                     {order.name} - {order.amount}
                 </Text>
             ))}
-        </Box>
+        </VStack>
     ) : (
         <Text
             borderColor="gray.200"
