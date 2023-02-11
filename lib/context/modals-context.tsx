@@ -37,13 +37,13 @@ export function modalsReducer(state: ModalsState, action: ModalsActions) {
         case ModalsActionsEnum.CLOSE_MODAL:
             return {
                 ...state,
-                [action.payload]: true,
+                [action.payload]: false,
             }
 
         case ModalsActionsEnum.OPEN_MODAL:
             return {
                 ...state,
-                [action.payload]: false,
+                [action.payload]: true,
             }
 
         default:

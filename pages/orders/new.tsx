@@ -1,6 +1,7 @@
 import { ButtonPrimary } from '@/components/buttons/primary'
 import Menu from '@/components/menu'
 import MenuOverview from '@/components/menu/overview'
+import { ModalsActionsEnum, useModal } from '@/lib/context/modals-context'
 import { MenuOrdersProvider, useMenuOrders } from '@/lib/context/order-context'
 import { useMenu } from '@/lib/hooks/use-menu'
 import { Box, Container, Input, Text } from '@chakra-ui/react'
@@ -8,13 +9,18 @@ import React from 'react'
 
 const NewOrder: React.FC = () => {
     const { menu } = useMenu()
-    const {
-        state: { orders },
-    } = useMenuOrders()
+    const { dispatch } = useModal()
+    /* const { */
+    /*     state: { orders }, */
+    /* } = useMenuOrders() */
 
     const onAddOrder = () => {
-        console.log('adding your order')
-        console.log({ orders })
+        if (true) {
+            dispatch({
+                type: ModalsActionsEnum.OPEN_MODAL,
+                payload: 'loginAlertOpen',
+            })
+        }
     }
 
     return (

@@ -10,14 +10,17 @@ import {
     Text,
 } from '@chakra-ui/react'
 
-const ModalsLoginAlert: React.FC = () => {
+interface ModalsLoginAlertProps {
+    open: boolean
+    onClose: () => void
+}
+
+const ModalsLoginAlert: React.FC<ModalsLoginAlertProps> = ({
+    open,
+    onClose,
+}) => {
     return (
-        <Modal
-            isOpen={true}
-            onClose={() => alert('closing')}
-            size="sm"
-            isCentered
-        >
+        <Modal isOpen={open} onClose={onClose} size="sm" isCentered>
             <ModalOverlay />
 
             <ModalContent>
@@ -33,7 +36,9 @@ const ModalsLoginAlert: React.FC = () => {
                 </ModalBody>
 
                 <ModalFooter>
-                    <Button colorScheme="yellow">Close</Button>
+                    <Button onClick={onClose} colorScheme="yellow">
+                        Close
+                    </Button>
                 </ModalFooter>
             </ModalContent>
         </Modal>
