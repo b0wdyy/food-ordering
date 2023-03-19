@@ -1,5 +1,5 @@
-import { database } from '@/config/firebaseConfig'
-import { doc, getDoc } from 'firebase/firestore'
+import { auth } from '@/config/firebaseConfig'
+import { onAuthStateChanged } from 'firebase/auth'
 import React, {
     createContext,
     useContext,
@@ -7,9 +7,11 @@ import React, {
     useMemo,
     useState,
 } from 'react'
+import { UserService } from '../services/user.service'
 
 interface UserState {
-    username: string
+    isLoggedIn: boolean
+    email: string
     avatar: string
 }
 interface UserProviderProps {
@@ -19,36 +21,51 @@ interface UserProviderProps {
 const UserContext = createContext<
     | {
           user: UserState
-          setUser: any
+          setUser: React.Dispatch<React.SetStateAction<UserState>>
       }
     | undefined
 >(undefined)
 
 function UserProvider({ children }: UserProviderProps) {
     const [user, setUser] = useState<UserState>({
-        username: 'John Doe',
+        isLoggedIn: false,
+        email: 'john.doe@continuum.be',
         avatar: 'default',
     })
 
     const value = useMemo(() => ({ user, setUser }), [user])
 
+    const getAndSetUser = async (authUserId: string) => {
+        if (await UserService.isUserInDb(authUserId)) {
+            const authUser = await UserService.getUserById(authUserId)
+            setUser({
+                ...authUser.data(),
+                isLoggedIn: true,
+            } as unknown as UserState)
+        }
+    }
+
     useEffect(() => {
-        async function init() {
-            const username = localStorage.getItem('USERNAME') as string
-
-            if (!username) return
-
-            const docRef = doc(database, 'users', username)
-            const snapshot = await getDoc(docRef)
-
-            if (snapshot.exists()) {
-                const user = snapshot.data()
-                setUser(user as UserState)
-                return
+        const unsubscription = onAuthStateChanged(auth, async (authUser) => {
+            if (authUser) {
+                localStorage.setItem('USER_ID', authUser.uid)
+                getAndSetUser(authUser.uid)
             }
+        })
+
+        async function init() {
+            const userId = localStorage.getItem('USER_ID') as string
+
+            if (!userId) return
+
+            getAndSetUser(userId)
         }
 
         init()
+
+        return () => {
+            unsubscription()
+        }
     }, [])
 
     return <UserContext.Provider value={value}>{children}</UserContext.Provider>

@@ -1,8 +1,7 @@
-import { auth } from '@/config/firebaseConfig'
+import { UserService } from '@/lib/services/user.service'
 import {
     Button,
     Divider,
-    Icon,
     Modal,
     ModalBody,
     ModalCloseButton,
@@ -12,7 +11,7 @@ import {
     ModalOverlay,
     Text,
 } from '@chakra-ui/react'
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { useState } from 'react'
 import GoogleIcon from '../icons/google'
 
 interface ModalsLoginAlertProps {
@@ -24,15 +23,16 @@ const ModalsLoginAlert: React.FC<ModalsLoginAlertProps> = ({
     open,
     onClose,
 }) => {
-    const provider = new GoogleAuthProvider()
+    const [loading, setLoading] = useState(false)
 
     const onButtonClick = async () => {
-        console.log('logging in with Google')
+        setLoading(true)
         try {
-            const response = await signInWithPopup(auth, provider)
-            console.log(response)
+            await UserService.loginUser()
         } catch (error) {
             console.error(error)
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -57,6 +57,7 @@ const ModalsLoginAlert: React.FC<ModalsLoginAlertProps> = ({
                         colorScheme="yellow"
                         onClick={onButtonClick}
                         w="full"
+                        isLoading={loading}
                     >
                         <GoogleIcon />
                         Login with Google
