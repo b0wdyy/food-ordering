@@ -1,3 +1,4 @@
+import { useUser } from '@/lib/context/user-context'
 import { UserService } from '@/lib/services/user.service'
 import {
     Button,
@@ -23,9 +24,12 @@ const ModalsLoginAlert: React.FC<ModalsLoginAlertProps> = ({
     open,
     onClose,
 }) => {
+    const { user } = useUser()
     const [loading, setLoading] = useState(false)
 
     const onButtonClick = async () => {
+        if (user.isLoggedIn) return
+
         setLoading(true)
         try {
             await UserService.loginUser()

@@ -6,6 +6,7 @@ import TheHeader from '@/components/common/the-header'
 import { UserProvider } from 'lib/context/user-context'
 import ModalsWrapper from '@/components/modals/wrapper'
 import { ModalsProvider } from '@/lib/context/modals-context'
+import { MenuOrdersProvider } from '@/lib/context/order-context'
 
 const theme = extendTheme({
     colors: {
@@ -37,13 +38,15 @@ export default function App({ Component, pageProps }: AppProps) {
             </Head>
 
             <UserProvider>
-                <ModalsProvider>
-                    <TheHeader />
+                <MenuOrdersProvider>
+                    <ModalsProvider>
+                        <TheHeader />
 
-                    <Component {...pageProps} />
+                        <Component {...pageProps} />
 
-                    <ModalsWrapper />
-                </ModalsProvider>
+                        <ModalsWrapper />
+                    </ModalsProvider>
+                </MenuOrdersProvider>
             </UserProvider>
         </ChakraProvider>
     )

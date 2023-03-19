@@ -1,4 +1,10 @@
-import React, { createContext, Dispatch, useContext, useReducer } from 'react'
+import React, {
+    createContext,
+    Dispatch,
+    useContext,
+    useMemo,
+    useReducer,
+} from 'react'
 import { IMenuItem } from '../types/IMenu'
 
 interface MenuOrders extends IMenuItem {
@@ -67,8 +73,9 @@ interface MenuOrdersProviderProps {
 
 function MenuOrdersProvider({ children }: MenuOrdersProviderProps) {
     const [state, dispatch] = useReducer(orderReducer, initialState)
+    const value = useMemo(() => ({ state, dispatch }), [state])
     return (
-        <MenuOrdersContext.Provider value={{ state, dispatch }}>
+        <MenuOrdersContext.Provider value={value}>
             {children}
         </MenuOrdersContext.Provider>
     )

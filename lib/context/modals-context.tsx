@@ -56,6 +56,7 @@ interface ModalsProviderProps {
 }
 
 export function ModalsProvider({ children }: ModalsProviderProps) {
+    // could be refactored
     const [state, dispatch] = useReducer(modalsReducer, initialState)
 
     return (

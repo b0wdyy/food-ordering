@@ -41,6 +41,8 @@ export class UserService {
             }
 
             return this.getUserById(response.user.uid)
-        } catch (e) {}
+        } catch (e) {
+            console.log('dit is een error', e)
+        }
     }
 }
