@@ -1,5 +1,6 @@
 import { useUser } from '@/lib/context/user-context'
 import { UserService } from '@/lib/services/user.service'
+import { IDefaultModalProps } from '@/lib/types/IModal'
 import {
     Button,
     Divider,
@@ -15,15 +16,7 @@ import {
 import { useState } from 'react'
 import GoogleIcon from '../icons/google'
 
-interface ModalsLoginAlertProps {
-    open: boolean
-    onClose: () => void
-}
-
-const ModalsLoginAlert: React.FC<ModalsLoginAlertProps> = ({
-    open,
-    onClose,
-}) => {
+const ModalsLoginAlert: React.FC<IDefaultModalProps> = ({ open, onClose }) => {
     const { user } = useUser()
     const [loading, setLoading] = useState(false)
 

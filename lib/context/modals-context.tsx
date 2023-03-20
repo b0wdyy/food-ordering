@@ -1,9 +1,5 @@
 import React, { createContext, Dispatch, useContext, useReducer } from 'react'
 
-interface ModalsState {
-    loginAlertOpen: boolean
-}
-
 export enum ModalsActionsEnum {
     OPEN_MODAL,
     CLOSE_MODAL,
@@ -23,9 +19,12 @@ interface CloseModal extends ModalsActionDefault {
 
 type ModalsActions = CloseModal | OpenModal
 
-const initialState: ModalsState = {
+const initialState = {
     loginAlertOpen: false,
+    avatarOpen: false,
 }
+
+export type ModalsState = typeof initialState
 
 const ModalsContext = createContext<{
     state: ModalsState
