@@ -7,7 +7,7 @@ import { useUser } from '@/lib/context/user-context'
 
 const Home: React.FC = () => {
     const {
-        user: { username },
+        user: { email },
     } = useUser()
     function greeting() {
         const hours = new Date().getHours()
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
     return (
         <Box as="section" m={8} position="relative">
             <Text as="h1" fontWeight="bold" fontSize="2xl">
-                {greeting()}, {username}
+                {greeting()}, {email}
             </Text>
 
             <Box color="gray.500">
